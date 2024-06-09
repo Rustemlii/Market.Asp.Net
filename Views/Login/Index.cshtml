@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<div class="login">
+	<div class="container">
+		<h2>Giriş Formu</h2>
+
+		<div class="login-form-grids animated wow slideInUp" data-wow-delay=".5s">
+	
+				<form>
+					<input type="text" placeholder="İstifadəçi adı" required="" name="username" >
+					<input type="password" placeholder="Şifrə" required=" " name="password" >
+					<div class="forgot">
+						<a href="#">Şifrəni unutdunmu?</a>
+					</div>
+					<input type="submit" value="Daxil ol">
+				</form>
+			
+			
+		</div>
+		<h4>Burda yenisiniz?</h4>
+		<p><a  asp-controller="Register" asp-action="Index">Qeydiyyat</a>   Geri qayıt >><a asp-controller="Home" asp-action="Index">Super Market<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>
+	</div>
+</div>
+

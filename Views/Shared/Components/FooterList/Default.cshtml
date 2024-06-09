@@ -1,0 +1,11 @@
+﻿@model IEnumerable<DTO.EntityDTO.CategoryDTO>
+
+<div class="col-md-3 w3_footer_grid">
+	<h3>Kateqoriya</h3>
+	<ul class="info">
+		@foreach(var item in Model)
+		{ 
+			<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a asp-controller="Home" asp-action="Page" asp-route-id="@item.Id">@item.Name</a></li>
+		}
+	</ul>
+</div>

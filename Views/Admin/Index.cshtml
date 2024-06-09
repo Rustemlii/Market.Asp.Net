@@ -1,0 +1,43 @@
+﻿@model IEnumerable<DTO.EntityDTO.CategoryDTO>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="table-heading">
+	<h2>Kateqoriyalar</h2>
+</div>
+<div class="agile-tables" >
+	<div class="w3l-table-info">
+		<h3>Kateqoriyalar</h3>
+	<a asp-controller="Admin" asp-action="CategoryAdd" class="btn btn-primary"  >
+		+ Yeni
+	</a>
+		<table id="table">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Adi</th>
+					<th>Sil</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				@foreach(var item in Model)
+				{
+					<tr>
+						<td>@item.Id</td>
+						<td>@item.Name</td>
+						<td> <a asp-controller="Admin" asp-action="CategoryDelete" asp-route-id="@item.Id" 
+						class="btn btn-warning" style="background-color:red">
+								Sil
+						</a> </td>
+
+
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+
+

@@ -1,0 +1,29 @@
+﻿@model DTO.EntityDTO.MessageDTO
+@{
+    ViewData["Title"] = "AdminReviewUpdate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<form asp-route-id="@Model.Id" method="post">
+    <span class="input input--ichiro">
+        <span class="input__label-content input__label-content--ichiro" style="font-size:large">Adı</span>
+        <br />
+        <input class="input__field input__field--ichiro" type="text" id="input-25" name="Name" required="" value="@Model.Name" />
+        <label class="input__label input__label--ichiro" for="input-25">
+        </label>
+        <br />
+    </span>
+    <br />
+    <span>
+
+        <span class="input__label-content input__label-content--ichiro" style="font-size:large">Mesaj</span>
+
+        <textarea name="Description" required="">@Model.Description </textarea>
+    </span>
+    <input type="submit" value="Redaktə et">
+
+
+</form>
+
+

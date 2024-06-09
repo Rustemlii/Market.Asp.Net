@@ -1,0 +1,28 @@
+﻿@model DTO.EntityDTO.LoginDTO
+@{
+    ViewData["Title"] = "AdminRegister";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<div class="register">
+    <div class="container">
+        <h2>Qeydiyyat</h2>
+        <div class="login-form-grids">
+            <form method="post">
+                <input type="text" asp-for="Username" placeholder="İstifadəçi adı" required=" ">
+                <input type="password" asp-for="Password" placeholder="Şifrə" required=" ">
+                <br />
+                <select asp-for="RoleId">
+                    @foreach (var item in ViewBag.user)
+                    {
+                        <option value="@item.Id">@item.Status </option>
+                    }
+                </select>
+                <input type="submit" value="Qeydiyyatdan kec">
+            </form>
+        </div>
+        <div class="register-home">
+            <a asp-controller="Admin" asp-action="Index">Admin Panel</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!--
+author: W3layouts
+author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<partial name="~/Views/Partials/_Head.cshtml" />
+
+<body>
+	<!-- header -->
+	<partial name="~/Views/Partials/_Header.cshtml" />
+	<!-- //header -->
+	<!-- navigation -->
+	<partial name="~/Views/Partials/_NavBar.cshtml" />
+
+	@RenderBody()
+
+	<!-- //footer -->
+	<partial name="~/Views/Partials/_Footer.cshtml" />
+	<!-- //footer -->
+	<!-- Bootstrap Core JavaScript -->
+	<partial name="~/Views/Partials/_Script.cshtml" />
+</body>
+</html>
+

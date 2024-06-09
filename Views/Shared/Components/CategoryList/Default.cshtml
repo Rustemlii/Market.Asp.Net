@@ -1,0 +1,35 @@
+﻿@model IEnumerable< DTO.EntityDTO.CategoryDTO>
+
+
+<div class="navigation-agileits">
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header nav_2">
+                <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a asp-controller="Home" asp-action="Index" class="act">Əsas Səhifə</a></li>
+                    @foreach (var item in Model)
+                    {
+                        <li><a asp-controller="Home" asp-action="Page" asp-route-id="@item.Id">@item.Name</a></li>
+                    }
+
+                    <li class="active"><a asp-controller="About" asp-action="Index" class="act">Haqqımızda</a></li>
+                    <li class="active"><a asp-controller="Contact" asp-action="Index" class="act">Bizimlə əlaqə</a></li>
+                    <li class="active"><a asp-controller="Review" asp-action="Index" class="act">Rəylər</a></li>
+
+                    <li class="active"><a asp-controller="Admin" asp-action="Index" class="act">Admin</a></li>
+
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>

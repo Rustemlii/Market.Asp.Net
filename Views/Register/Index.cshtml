@@ -1,0 +1,22 @@
+﻿@model DTO.EntityDTO.LoginDTO
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<div class="register">
+    <div class="container">
+        <h2>Qeydiyyat</h2>
+        <div class="login-form-grids">
+            <form  method="post">
+                <input type="text"  asp-for="Username" placeholder="İstifadəçi adı" required=" ">
+                <input type="password" asp-for="Password" placeholder="Şifrə" required=" ">
+                <br />          
+                <input type="submit" value="Qeydiyyatdan kec">             
+            </form>
+        </div>
+        <div class="register-home">
+            <a asp-controller="Home" asp-action="Index">Super Market</a>
+        </div>
+    </div>
+</div>

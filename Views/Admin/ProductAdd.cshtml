@@ -1,0 +1,63 @@
+﻿@model DTO.EntityDTO.ProductDTO
+@{
+    ViewData["Title"] = "ProductAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="agile-grids">
+    <!-- input-forms -->
+    <div class="grids">
+        <div class="progressbar-heading grids-heading">
+            <h2>Produkt Formu</h2>
+        </div>
+        <div class="panel panel-widget forms-panel">
+            <div class="forms">
+                <div class="form-grids widget-shadow" data-example-id="basic-forms">
+                    <div class="form-title">
+                    </div>
+                    <div class="form-body">
+                        <form method="post">
+                            <div class="form-group">
+                                <label for="exampleInputFile">Adı</label>
+
+                                <select class="form-control" id="exampleInputFile" asp-for="CategoryID">
+                                    @foreach (var item in ViewBag.ctg)
+                                    {
+                                        <option value="@item.Id">
+                                            @item.Name
+                                        </option>
+                                    }
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputFile">Adı</label>
+                                <input type="text" asp-for="Name" class="form-control" id="exampleInputFile">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputFile">Qiymət</label>
+                                <input type="text" asp-for="Price" class="form-control" id="exampleInputFile">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputFile">Endirimli qiymət</label>
+                                <input type="text" asp-for="DisCount" class="form-control" id="exampleInputFile">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputFile">Say</label>
+                                <input type="text" asp-for="Quantity" class="form-control" id="exampleInputFile">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputFile">Şəkil</label>
+                                <input type="text" asp-for="Image" class="form-control" id="exampleInputFile">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w3ls-button">Elave et</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //input-forms -->
+    </div>
+</div>
+

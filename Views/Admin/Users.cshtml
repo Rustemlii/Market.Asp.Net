@@ -1,0 +1,64 @@
+﻿@model IEnumerable<DTO.EntityDTO.LoginDTO>
+@{
+    ViewData["Title"] = "Users";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="table-heading">
+    <h2>İstifadəçilər</h2>
+</div>
+<div class="agile-tables">
+    <div class="w3l-table-info">
+
+        <a asp-controller="Admin" asp-action="AdminRegister" class="btn btn-primary">
+            + Yeni
+        </a>
+        <table id="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>İstifadəçi adı</th>
+                    <th>Şifrəsi</th>
+                    <th>Statusu</th>           
+                    <th>Redaktə et</th>
+                    <th>Sil</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Username</td>
+                        <td>@item.Password</td>
+                        <td>@item.RoleName</td>
+                  
+                        <td>
+
+                            <a asp-controller="Admin" asp-action="UsersUpdate" asp-route-id="@item.Id"
+                               class="btn btn-primary" style="background-color:forestgreen">
+                                Redaktə et
+                            </a>
+                        </td>
+
+                        <td>
+                            <a asp-controller="Admin" asp-action="UsersDelete" asp-route-id="@item.Id"
+                               class="btn btn-warning" style="background-color:red">
+                                Sil
+                            </a>
+                        </td>
+
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+

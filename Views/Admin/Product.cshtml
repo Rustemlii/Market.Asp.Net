@@ -1,0 +1,67 @@
+﻿@model IEnumerable<DTO.EntityDTO.ProductDTO>
+@{
+    ViewData["Title"] = "Product";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="table-heading">
+    <h2>Produktlar</h2>
+</div>
+<div class="agile-tables">
+    <div class="w3l-table-info">
+
+        <a asp-controller="Admin" asp-action="ProductAdd" class="btn btn-primary">
+            + Yeni
+        </a>
+        <table id="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Kateqoriyası</th>
+                    <th>Adi</th>
+                    <th>Qiyməti</th>
+                    <th>Endirimli qiyməti</th>
+                    <th>Say</th>
+                    <th>Şəkil</th>
+                    <th>Redaktə et</th>
+                    <th>Sil</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.CategoryName</td>
+                        <td>@item.Name</td>
+                        <td>@item.Price</td>
+                        <td>@item.DisCount</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.Image</td>
+                        <td>
+
+                            <a asp-controller="Admin" asp-action="ProductUpdate" asp-route-id="@item.Id"
+                               class="btn btn-primary" style="background-color:forestgreen">
+                                Redaktə et
+                            </a>
+                        </td>
+
+                        <td>
+                            <a asp-controller="Admin" asp-action="ProductDelete" asp-route-id="@item.Id"
+                               class="btn btn-warning" style="background-color:red">
+                                Sil
+                            </a>
+                        </td>
+
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+
+

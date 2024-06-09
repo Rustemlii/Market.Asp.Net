@@ -1,0 +1,40 @@
+﻿
+<div class="footer">
+	<div class="container">
+		<div class="w3_footer_grids">
+			<div class="col-md-3 w3_footer_grid">
+				<h3>Contact</h3>
+
+				<ul class="address">
+					<li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>Baku</span></li>
+					<li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
+					<li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
+				</ul>
+			</div>
+			<div class="col-md-3 w3_footer_grid">
+				<h3>Information</h3>
+				<ul class="info">
+					<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a asp-controller="About" asp-action="Index" >Haqqımızda</a></li>
+					<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a asp-controller="Contact" asp-action="Index">Bizimlə əlaqə</a></li>
+				</ul>
+			</div>
+			@await Component.InvokeAsync("FooterList")
+			<div class="col-md-3 w3_footer_grid">
+				<h3>Profile</h3>
+				<ul class="info">	
+					<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a asp-controller="Login" asp-action="Index">Login</a></li>
+					<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a asp-controller="Register" asp-action="Index">Qeydiyyat</a></li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+
+	<div class="footer-copy">
+
+		<div class="container">
+			<p>© 2024 Super Market. All rights reserved | Design by <a href="http://w3layouts.com/">Kamil Rustemli</a></p>
+		</div>
+	</div>
+
+</div>
